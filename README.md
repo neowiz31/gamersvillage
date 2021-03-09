@@ -38,7 +38,7 @@
 
 | Column           | type       | Options           |
 | ---------------- | ---------- | ----------------- |
-| game_name        | string     | null: false       |
+| game_title       | string     | null: false       |
 | hardware_id      | integer    | null: false       |
 | game_genre_id    | integer    | null: false       |
 | official_url     | string     | null: false       |
