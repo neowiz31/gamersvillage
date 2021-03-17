@@ -1,15 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gamersvillage</title>
+    <title>GamersVillage</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', media: 'all' %>
   </head>
 
   <body>
+      <header class="header">
+      <div class="header__bar row">
+        <%= link_to 'GamersVillage', root_path, class: "title" %>
+      </div>
+      <div class="hardware">
+        <ul class="hardware_list">
+          <li class="PS">PS</li>
+          <li class="PS2">PS2<li>
+          <li class="PS3">PS3<li>
+          <li class="PS4">PS4<li>
+          <li class="PSP">PSP<li>
+          <li class="PSVita">PSVita<li>
+          <li class="PSVR">PSVR<li>
+          <li class="PS2">セガサターン<li>
+          <li class="PS2">ドリームキャスト<li>
+          <li class="PS2">ピコ<li>
+          <li class="PS2">GB<li>
+          <li class="PS2">GBA<li>
+        </ul>
+        <ul class="hardware_list2">
+          <li class="PS2">DS<li>
+          <li class="PS2">3DS<li>
+          <li class="PS2">64<li>
+          <li class="PS2">ゲームキューブ<li>
+          <li class="PS2">Wii<li>
+          <li class="PS2">WiiU<li>
+          <li class="PS2">Swich<li>
+          <li class="PS2">PC<li>
+          <li class="PS2">アプリ<li>
+          <li class="PS2">メガドライブ<li>
+          <li class="PS2">XBOX<li>
+        </ul>
+      </div>
+
+    </header>
     <%= yield %>
+        <footer>
+      <p>
+        Copyright GamersVillage 2021.
+      </p>
+    </footer>
   </body>
 </html>
