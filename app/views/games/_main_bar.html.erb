@@ -1,0 +1,10 @@
+<div class="contents row">
+  <% @games.each do |game| %>
+    <div class="content_post" style="background-image: url(<%= game.image %>);">
+      <p><%= game.name %></p>
+      <span class="name">
+        <%= game.hardware.name %>
+      </span>
+    </div>
+  <% end %>
+</div>

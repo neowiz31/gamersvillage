@@ -1,0 +1,85 @@
+a {
+  text-decoration: none;
+}
+
+.header {
+  background-color: black;
+}
+
+
+body {
+  background-color: black;
+}
+
+.title {
+  background-image: image-url('furima-header01.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 32pt;
+  padding: 5vh 15vw;
+  color: #fff;
+}
+.hardware {
+  background: linear-gradient(#1268d8,#052c5f);
+  margin: 3px;
+  border: 1px solid white ;
+  border-radius: 0.5em;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+li {
+  display: inline;
+  padding: 5px;
+  font-size: 20px;
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.reft-bar {
+  width: 15vw;
+  background: linear-gradient(#1268d8,#052c5f);
+  margin: 3px;
+  border: 1px solid white ;
+  border-radius: 0.5em;
+  height: 100vh;
+}
+
+.right-bar {
+  width: 15vw;
+  background: linear-gradient(#1268d8,#052c5f);
+  margin: 3px;
+  border: 1px solid white ;
+  border-radius: 0.5em;
+  height: 100vh;
+}
+
+.main-bar {
+  width: 70vw;
+  background: linear-gradient(#1268d8,#052c5f);
+  margin: 3px;
+  border: 1px solid white ;
+  border-radius: 0.5em;
+  height: 100vh;
+}
+
+footer {
+  margin: 3px;
+  color: #fff;
+  text-align: right;
+}
