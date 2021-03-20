@@ -1,0 +1,49 @@
+<div class="game_form">
+  <h2 class="game_info_input">ゲームの情報を入力</h2>
+  <div class= "game_input">
+   <%= form_with model: @game, local: true do |f| %>
+    <div class="img-upload">
+    
+      <div class="weight-bold-text">
+        ゲームパッケージorタイトル画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"game-image" %>
+      </div>
+    </div>
+  
+    <div class="game_title">
+      <div class="weight-bold-text">
+        ゲーム名
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="title_form">
+        <%= f.text_area :game_title, class:"title_form", id:"title_form", placeholder:"ゲーム名（必須 40文字まで)", maxlength:"40" %>
+      </div>
+    </div>
+    <div class="game_hardware">
+
+        <div class="weight-bold-text">
+          機種
+          <span class="indispensable">必須</span>
+        </div>
+        <%= "PS5" %>
+    </div>
+    <div class="game_janre">
+        <div class="weight-bold-text">
+          ゲームジャンル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= "RTS" %>
+    </div>
+    <div class="registration-btns">
+      <%= f.submit "登録する" ,class:"registration-btn" %>
+    </div>
+   <% end %>
+  </div>
+
+</div>
