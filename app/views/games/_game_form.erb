@@ -1,7 +1,7 @@
 <div class="game_form">
   <h2 class="game_info_input">ゲームの情報を入力</h2>
   <div class= "game_input">
-   <%= form_with model: @game, local: true do |f| %>
+   <%= form_with model: @game, url:games_path, local: true do |f| %>
     <div class="img-upload">
     
       <div class="weight-bold-text">
@@ -41,14 +41,14 @@
           機種
           <span class="indispensable">必須</span>
         </div>
-        <%= "PS5" %>
+        <%= f.collection_select(:hardware_id, Hardware.all, :id, :name, {}, {class:"select-box"}) %>
     </div>
     <div class="game_genre">
         <div class="weight-bold-text">
           ゲームジャンル
           <span class="indispensable">必須</span>
         </div>
-        <%= "RTS" %>
+        <%= f.collection_select(:game_genre_id, GameGenre.all, :id, :name, {}, {class:"select-box"}) %>
     </div>
     <div class="registration-btns">
       <%= f.submit "登録する" ,class:"registration-btn" %>
