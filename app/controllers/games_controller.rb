@@ -16,6 +16,10 @@ class GamesController < ApplicationController
     end
   end
 
+  private
 
+  def game_params
+    params.require(:game).permit(:image, :game_title, :hardware_id, :game_genre_id, :offcial_url)
+  end
 
 end

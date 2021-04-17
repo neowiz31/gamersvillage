@@ -176,3 +176,21 @@ footer {
   display: flex;
   justify-content: center;
 }
+.game-img {
+  width: 32vh;
+  height: 33vh;
+}
+
+.game-contents {
+  display: flex;
+  align-items: center;
+  padding: 5vh 0;
+  flex-wrap: wrap;
+  
+}
+
+.game-lists {
+  width: 20vw;
+  flex-wrap: wrap;
+  justify-content: center;
+}
