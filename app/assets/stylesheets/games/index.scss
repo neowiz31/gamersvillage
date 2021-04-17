@@ -182,10 +182,12 @@ footer {
 }
 
 .game-contents {
+  height: 100%;
   display: flex;
   align-items: center;
   padding: 5vh 0;
   flex-wrap: wrap;
+  overflow-y: scroll;
   
 }
 
