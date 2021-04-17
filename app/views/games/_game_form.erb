@@ -1,0 +1,59 @@
+<div class="game_form">
+  <h2 class="game_info_input">ゲームの情報を入力</h2>
+  <div class= "game_input">
+   <%= form_with model: @game, url:games_path, local: true do |f| %>
+    <div class="img-upload">
+    
+      <div class="weight-bold-text">
+        ゲームパッケージorタイトル画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"game-image" %>
+      </div>
+    </div>
+  
+    <div class="game_title">
+      <div class="weight-bold-text">
+        ゲーム名
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="title_form">
+        <%= f.text_area :game_title, class:"title_form", id:"title_form", placeholder:"ゲーム名（必須 40文字まで)", maxlength:"40" %>
+      </div>
+    </div>
+
+    <div class="official_url">
+      <div class="weight-bold-text">
+        公式URL
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="url_form">
+        <%= f.text_area :official_url, class:"url_form", id:"url_form", placeholder:"http://" %>
+      </div>
+    </div>
+
+    <div class="game_hardware">
+        <div class="weight-bold-text">
+          機種
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:hardware_id, Hardware.all, :id, :name, {}, {class:"select-box"}) %>
+    </div>
+    <div class="game_genre">
+        <div class="weight-bold-text">
+          ゲームジャンル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:game_genre_id, GameGenre.all, :id, :name, {}, {class:"select-box"}) %>
+    </div>
+    <div class="registration-btns">
+      <%= f.submit "登録する" ,class:"registration-btn" %>
+    </div>
+   <% end %>
+  </div>
+
+</div>
