@@ -1,11 +1,14 @@
 <div class="game-contents">
   <% @games.each do |game| %>
     <li class='lists'>
+    <%= link_to game_path(game.id), method: :get do %>
     <%= image_tag game.image, class: "game-img" %>
-      <p><%= game.hardware.name %></p>    
       <p><%= game.game_title %></p>
+      <p><%= game.hardware.name %></p>    
+
       <span class="name">
       </span>
     </li>
+    <% end %>
   <% end %>
 </div>

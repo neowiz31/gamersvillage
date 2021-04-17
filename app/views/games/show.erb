@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div class="reft-bar">
+    <%= render "reft_bar"%>
+  </div>
+  <div class="game-show">
+    <div class="game-show-img">
+    <%= image_tag @game.image ,class:"game-show-img" %>
+    </div>
+      <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-game">ゲームタイトル</th>
+          <td class="detail-value"><%= @game.game_title %></td>
+        </tr>
+        <tr>
+          <th class="detail-game">機種</th>
+          <td class="detail-value"><%= @game.hardware.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-game">ゲームジャンル</th>
+          <td class="detail-value"><%= @game.game_genre.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-game">公式URL</th>
+          <td class="detail-value"><%=@game.official_url %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="right-bar">
+    <%= render "right_bar"%>
+  </div>
+</div>
+<div class="footer">
+  <%= render "footer"%>
+</div>
