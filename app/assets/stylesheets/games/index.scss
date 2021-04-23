@@ -27,7 +27,13 @@ html {
   border-radius: 0.5em;
 }
 
-ul {
+.hardware_list {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.hardware_list2 {
   display: flex;
   justify-content: center;
   padding: 5px;
