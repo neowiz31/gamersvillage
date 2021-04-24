@@ -45,7 +45,7 @@
           <p>
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.text %>
-            <%= comment.created_at%>
+            <%= comment.created_at.to_s(:datetime_jp) %>
           </p>
         <% end %>
       <% end %>
