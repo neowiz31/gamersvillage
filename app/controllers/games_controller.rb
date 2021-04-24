@@ -18,6 +18,10 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @comment = Comment.new
+    @comments = @game.comments.includes(:user)
+    @comments = @game.comments.all.order(id: "DESC")
+
   end
 
   private
