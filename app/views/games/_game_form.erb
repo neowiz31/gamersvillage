@@ -2,6 +2,7 @@
   <h2 class="game_info_input">ゲームの情報を入力</h2>
   <div class= "game_input">
    <%= form_with model: @game, url:games_path, local: true do |f| %>
+    <%= render 'games/shared/error_messages', model: f.object %>
     <div class="img-upload">
     
       <div class="weight-bold-text">

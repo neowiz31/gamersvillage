@@ -41,7 +41,7 @@
 | game_title       | string     | null: false       |
 | hardware_id      | integer    | null: false       |
 | game_genre_id    | integer    | null: false       |
-| official_url     | string     | null: false       |
+| official_url     | string     |                   |
 | user             | references | foreign_key: true |
 
 ### Association
