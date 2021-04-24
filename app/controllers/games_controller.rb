@@ -20,6 +20,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @comment = Comment.new
     @comments = @game.comments.includes(:user)
+    @comments = @game.comments.all.order(id: "DESC")
 
   end
 
