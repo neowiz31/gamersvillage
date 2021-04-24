@@ -3,30 +3,55 @@
     <%= render "reft_bar"%>
   </div>
   <div class="game-show">
-    <div class="game-show-img">
-    <%= image_tag @game.image ,class:"game-show-img" %>
+    <div class="game-info">
+      <div class="game-show-img">
+      <%= image_tag @game.image ,class:"game-show-img" %>
+      </div>
+       <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-game">ゲームタイトル</th>
+            <td class="detail-value"><%= @game.game_title %></td>
+          </tr>
+          <tr>
+            <th class="detail-game">機種</th>
+            <td class="detail-value"><%= @game.hardware.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-game">ゲームジャンル</th>
+            <td class="detail-value"><%= @game.game_genre.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-game">公式URL</th>
+            <td class="detail-value"><%=@game.official_url %></td>
+          </tr>
+        </tbody>
+       </table>
     </div>
-      <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-game">ゲームタイトル</th>
-          <td class="detail-value"><%= @game.game_title %></td>
-        </tr>
-        <tr>
-          <th class="detail-game">機種</th>
-          <td class="detail-value"><%= @game.hardware.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-game">ゲームジャンル</th>
-          <td class="detail-value"><%= @game.game_genre.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-game">公式URL</th>
-          <td class="detail-value"><%=@game.official_url %></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="container">
+    <% if user_signed_in? %>
+    <%= form_with(model: [@game, @comment], local: true) do |form| %>
+      <%= form.text_area :text, placeholder: "コメントする", rows:"2" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+    <% else %>
+    <strong><p>※※※　コメントの投稿には新規登録/ログインが必要です　※※※
+    </strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.text %>
+            <%= comment.created_at%>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
   </div>
+</div>
   <div class="right-bar">
     <%= render "right_bar"%>
   </div>
