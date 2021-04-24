@@ -1,6 +1,7 @@
 .right_bar{
   justify-content: center;
   color:white;
+  overflow-y: scroll;
 }
 .right_bar_title{
   text-align: center;
