@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   def index
     @games = Game.order("created_at DESC")
+    @comments = Comment.order("created_at DESC")
   end
 
   def new

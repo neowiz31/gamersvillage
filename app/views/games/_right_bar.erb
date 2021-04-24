@@ -1,0 +1,17 @@
+<div class="right_bar">
+  <div class="right_bar_title">
+  新規投稿コメント一覧
+  </div>
+  <% if @comments %>
+    <% @comments.each do |comment| %>
+      <div class="comments-field">
+        <div class="comments-contets">
+          <p><strong><%= link_to "#{comment.game.game_title}",game_path(comment.game.id)%></p>
+          <p><strong><%= comment.user.nickname %>：</strong></p>
+          <p><%= comment.text %></p>
+        </div>
+
+      </div>
+    <% end %>
+  <% end %>
+</div>
