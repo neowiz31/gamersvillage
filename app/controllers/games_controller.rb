@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]  
   def index
     @games = Game.order("created_at DESC")
     @comments = Comment.order("created_at DESC")
